@@ -20,6 +20,8 @@ if (isset($_GET['FingerID'])) {
             //An existed fingerprint has been detected for Login or Logout
             if ($row['username'] != "Name") {
                 $Uname = $row['username'];
+                $MyClass = $row['myclass'];
+                $Email = $row['email'];
                 $Number = $row['serialnumber'];
                 $sql = "SELECT * FROM users_logs WHERE fingerprint_id=? AND checkindate=CURDATE() AND timeout=''";
                 $result = mysqli_stmt_init($conn);
@@ -33,7 +35,7 @@ if (isset($_GET['FingerID'])) {
                     //*****************************************************
                     //Login
                     if (!$row = mysqli_fetch_assoc($resultl)) {
-                        $sql = "INSERT INTO users_logs (username, serialnumber, fingerprint_id, checkindate, timein, timeout) VALUES (? ,?, ?, CURDATE(), CURTIME(), ?)";
+                        $sql = "INSERT INTO users_logs (username, serialnumber, fingerprint_id, checkindate, timein, timeout) VALUES (? ,?, ?, ?, ?, CURDATE(), CURTIME(), ?)";
                         $result = mysqli_stmt_init($conn);
                         if (!mysqli_stmt_prepare($result, $sql)) {
                             echo "SQL_Error_Select_login1";
