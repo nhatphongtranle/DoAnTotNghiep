@@ -6,7 +6,6 @@ session_start();
     <?php
     //Connect to database
     require 'connectDB.php';
-
     if (isset($_POST['log_date'])) {
       if ($_POST['date_sel'] != 0) {
         $_SESSION['seldate'] = $_POST['date_sel'];
@@ -20,7 +19,6 @@ session_start();
     } else if ($_POST['select_date'] == 0) {
       $seldate = $_SESSION['seldate'];
     }
-
     $sql = "SELECT * FROM users_logs WHERE checkindate='$seldate' ORDER BY id DESC";
     $result = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($result, $sql)) {

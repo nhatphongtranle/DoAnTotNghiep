@@ -3,15 +3,19 @@
 
 <head>
   <title>Users</title>
+  <!--CSS-->
   <link rel="stylesheet" type="text/css" href="css/Homepage.css">
   <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <!--JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <!--BOOTSTRAP-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <!--BOXICONS-->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -22,6 +26,7 @@
       <h1 class="slideInDown animated">Dashboard</h1>
       <div class="search">
         <form action="" method="GET">
+          <!-- Datepicker -->
           <div class="row">
             <div class="col-2 md-3">
               <input type="text" name="from_date" id="from_date" class="form-control" placeholder="From Date" />
@@ -34,10 +39,12 @@
             </div>
             <br />
           </div>
+          <!--Search data-->
           <div class="row">
             <div class="col-2 md-3">
               <input type="text" name="keyword" class="form-control" id="search" autocomplete="off" placeholder="Nhập từ khóa tìm kiếm">
             </div>
+            <!--Filter data-->
             <div class="col-1 md-4">
               <select name="status" id="status" class="form-control" onchange="selectdata(this.options[this.selectedIndex].value)">
                 <option value="All">All</option>
@@ -47,6 +54,7 @@
             </div>
           </div>
       </div>
+      <!--Table header-->
       <div class="tbl-header slideInRight animated">
         <table cellpadding="0" cellspacing="0" border="0">
           <thead>
@@ -62,6 +70,7 @@
           </thead>
         </table>
       </div>
+      <!--Table content-->
       <div class="tbl-content slideInRight animated">
         <table cellpadding="0" cellspacing="0" border="0">
           <tbody id="myTable">
@@ -100,6 +109,7 @@
             ?>
           </tbody>
         </table>
+        <!--Pagination-->
         <?php
         $sql = "SELECT * FROM users";
         $rs_result = mysqli_query($conn, $sql);

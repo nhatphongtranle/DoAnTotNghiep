@@ -41,18 +41,3 @@
     ?>
   </tbody>
 </table>
-<?php
-/*$sql = "SELECT * FROM users";
-$rs_result = mysqli_query($conn, $sql);
-$total_record = mysqli_num_rows($rs_result);
-$total_page = ceil($total_record / $num_per_page);
-if ($page > 1) {
-  echo "<a href='ManageUsers.php?page=" . ($page - 1) . "' class='btn btn-danger'><<</a>";
-}
-for ($i = 1; $i < $total_page; $i++) {
-  echo "<a href='ManageUsers.php?page=" . $i . "' class='btn btn-primary'>$i</a>";
-}
-if ($i > $page) {
-  echo "<a href='ManageUsers.php?page=" . ($page + 1) . "' class='btn btn-danger'>>></a>";
-}
-?>*/
